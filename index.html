@@ -285,6 +285,27 @@
         .goog-te-gadget span {
             display: none;
         }
+
+        @media (max-width:640px) {
+
+            h1 {
+                font-size: 28px !important;
+                line-height: 1.2;
+            }
+
+            h2 {
+                font-size: 28px !important;
+            }
+
+            .text-5xl {
+                font-size: 32px !important;
+            }
+
+            .text-6xl {
+                font-size: 36px !important;
+            }
+
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
@@ -294,7 +315,7 @@
     <!-- HEADER -->
     <header class="bg-gradient-to-r from-[#1e3a8a] to-[#172554] text-white sticky top-0 z-50 shadow-2xl">
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
 
             <div class="flex items-center gap-3">
 
@@ -338,7 +359,8 @@
 
     <!-- HERO -->
     <section class="hero-bg min-h-screen flex items-center relative text-white">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center text-center md:text-left">
             <div class="order-2 md:order-1 reveal active stagger-1">
                 <img src="logo.png"
                     class="rounded-3xl shadow-2xl w-full max-w-md mx-auto border-8 border-white/30 animate-float">
@@ -370,9 +392,9 @@
                     Fast • Reliable • Affordable
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-6 pt-4">
+                <div class="flex flex-col sm:flex-row gap-4 pt-4 w-full">
                     <a href="tel:6202346561"
-                        class="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold text-xl py-6 px-8 rounded-3xl flex items-center justify-center gap-4 shadow-2xl transform hover:scale-105 transition-all animate-bounce-in stagger-3">
+                        class="w-full sm:w-auto flex-1 bg-green-600 hover:bg-green-700 text-white font-bold text-xl py-6 px-8 rounded-3xl flex items-center justify-center gap-4 shadow-2xl transform hover:scale-105 transition-all animate-bounce-in stagger-3">
                         <i class="fa-solid fa-phone-volume text-3xl"></i>
                         <div>
                             <p class="text-base opacity-90">Call Now</p>
@@ -408,7 +430,7 @@
                 <h2 id="servicesTitle" class="text-5xl font-extrabold">Services We Provide</h2>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div
                     class="service-card card-hover bg-white border border-gray-100 rounded-3xl p-8 text-center reveal stagger-1">
                     <div
@@ -549,9 +571,13 @@
                 Barahat Ishipur (20km Radius)
             </h2>
 
-            <iframe src="https://www.google.com/maps?q=Ishipur%20Barahat%20Bihar&output=embed" width="100%" height="400"
-                style="border:0; border-radius:20px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <div class="rounded-2xl overflow-hidden shadow-xl">
+
+                <iframe src="https://www.google.com/maps?q=Ishipur%20Barahat%20Bihar&output=embed" width="100%"
+                    height="350" style="border:0;" loading="lazy">
+                </iframe>
+
+            </div>
 
         </div>
 
