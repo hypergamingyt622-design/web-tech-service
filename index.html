@@ -739,7 +739,23 @@ ${customerLocation}`;
                 "https://wa.me/916202346561?text=" +
                 encodeURIComponent(text);
 
-            window.open(url, '_blank');
+            fetch("https://script.google.com/macros/s/AKfycbw3iriGNY_O7sxyx7jiivaEL2EOYNckh1WA4WzoV4YFopXS6E60dUCpU-dwdLqludLt/exec", {
+
+                method: "POST",
+
+                body: JSON.stringify({
+
+                    name: name,
+                    phone: phone,
+                    address: address,
+                    landmark: landmark,
+                    service: service,
+                    message: msg,
+                    location: customerLocation
+
+                })
+
+            });
 
         }
 
