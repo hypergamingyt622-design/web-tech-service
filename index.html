@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SM TECHNICIAN - Electrician & Plumbing Service</title>
-    <meta name="description"
-        content="Bhagalpur & Pirpanti ke sabse trusted electrician aur plumber. House wiring, plumbing, fan repair - 24×7 service." />
-    <meta name="keywords"
-        content="electrician bhagalpur, plumber bhagalpur, house wiring bhagalpur, electrician pirpanti">
+    <meta name="description" content="Bhagalpur & Pirpanti ke sabse trusted electrician aur plumber. House wiring, plumbing, fan repair - 24×7 service." />
+    <meta name="keywords" content="electrician bhagalpur, plumber bhagalpur, house wiring bhagalpur, electrician pirpanti" />
+    <meta name="author" content="SM Technician" />
+    <meta property="og:title" content="SM Technician - Electrician & Plumbing" />
+    <meta property="og:description" content="Best electrician and plumber in Bhagalpur" />
+    <meta property="og:type" content="website" />
 
-    <meta name="author" content="SM Technician">
-
-    <meta property="og:title" content="SM Technician - Electrician & Plumbing">
-
-    <meta property="og:description" content="Best electrician and plumber in Bhagalpur">
-
-    <meta property="og:type" content="website">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <style>
         :root {
@@ -38,150 +29,103 @@
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: #f8fafc;
         }
 
         .hero-bg {
-            background: linear-gradient(rgba(30, 64, 175, 0.88), rgba(30, 64, 175, 0.80)),
-                url('https://images.unsplash.com/photo-1581092160560-1c1e428e9d65?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(30, 64, 175, 0.90), rgba(30, 64, 175, 0.82)),
+                        url('https://images.unsplash.com/photo-1581092160560-1c1e428e9d65?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            min-height: 100vh;
         }
 
-        /* === Animations === */
+        /* ────────────────────────────────────────
+           ANIMATIONS - Enhanced & More Variety
+        ──────────────────────────────────────── */
         @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50%      { transform: translateY(-18px) rotate(3deg); }
         }
 
-        @keyframes pulse-scale {
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(250,204,21,0.5); }
+            70%      { box-shadow: 0 0 0 30px rgba(250,204,21,0); }
+        }
 
-            0%,
-            100% {
-                transform: scale(1);
-            }
+        @keyframes typing {
+            from { width: 0; }
+            to   { width: 100%; }
+        }
 
-            50% {
-                transform: scale(1.06);
-            }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        @keyframes shine {
+            0%   { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
         @keyframes bounce-in {
-            0% {
-                transform: scale(0.6) translateY(40px);
-                opacity: 0;
-            }
-
-            60% {
-                transform: scale(1.05) translateY(-10px);
-                opacity: 0.9;
-            }
-
-            80% {
-                transform: scale(0.98) translateY(5px);
-            }
-
-            100% {
-                transform: scale(1) translateY(0);
-                opacity: 1;
-            }
+            0%   { transform: scale(0.6) translateY(40px); opacity: 0; }
+            60%  { transform: scale(1.05) translateY(-10px); opacity: 0.9; }
+            80%  { transform: scale(0.98) translateY(5px); }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
         }
 
         @keyframes slide-up {
-            from {
-                transform: translateY(80px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
+            from { transform: translateY(90px); opacity: 0; }
+            to   { transform: translateY(0); opacity: 1; }
         }
 
         @keyframes rotate-slow {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
         }
 
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
+        .animate-float       { animation: float 7s ease-in-out infinite; }
+        .animate-pulse-glow  { animation: pulse-glow 3.5s ease-in-out infinite; }
+        .animate-typing      { overflow: hidden; border-right: 4px solid var(--accent); white-space: nowrap; animation: typing 4.8s steps(38) forwards, blink 1s infinite; }
+        .animate-shine       { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); background-size: 200% 100%; animation: shine 4s infinite; }
+        .animate-bounce-in   { animation: bounce-in 1s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+        .animate-slide-up    { animation: slide-up 1.3s cubic-bezier(0.25,0.46,0.45,0.94) forwards; }
+        .animate-rotate-slow { animation: rotate-slow 40s linear infinite; }
 
-        .animate-pulse-scale {
-            animation: pulse-scale 2.5s ease-in-out infinite;
-        }
+        .stagger-1 { animation-delay: 150ms; }
+        .stagger-2 { animation-delay: 300ms; }
+        .stagger-3 { animation-delay: 450ms; }
+        .stagger-4 { animation-delay: 600ms; }
 
-        .animate-bounce-in {
-            animation: bounce-in 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        .animate-slide-up {
-            animation: slide-up 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-        }
-
-        .animate-rotate-slow {
-            animation: rotate-slow 30s linear infinite;
-        }
-
-        .stagger-1 {
-            animation-delay: 100ms;
-        }
-
-        .stagger-2 {
-            animation-delay: 250ms;
-        }
-
-        .stagger-3 {
-            animation-delay: 400ms;
-        }
-
-        .stagger-4 {
-            animation-delay: 550ms;
-        }
-
-        /* Card hover lift + glow */
+        /* Card hover lift + stronger glow */
         .card-hover {
-            transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: all 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .card-hover:hover {
-            transform: translateY(-16px) scale(1.04);
-            box-shadow: 0 30px 60px -15px rgba(30, 64, 175, 0.4), 0 0 0 1px rgba(250, 204, 21, 0.15);
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 35px 70px -15px rgba(30,64,175,0.35), 0 0 0 2px rgba(250,204,21,0.18);
         }
 
         .service-icon {
-            transition: all 0.5s ease;
+            transition: all 0.7s ease;
         }
 
         .service-card:hover .service-icon {
-            transform: rotate(15deg) scale(1.22);
-            background-color: var(--primary) !important;
+            transform: rotate(360deg) scale(1.35);
+            background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
             color: white !important;
         }
 
-        /* Modal animation */
-        .modal {
-            animation: bounce-in 0.7s ease-out;
-        }
-
-        /* Scroll-triggered fade */
+        /* Scroll reveal */
         .reveal {
             opacity: 0;
-            transform: translateY(60px);
-            transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+            transform: translateY(80px);
+            transition: all 1.3s cubic-bezier(0.215, 0.61, 0.355, 1);
         }
 
         .reveal.active {
@@ -189,212 +133,125 @@
             transform: translateY(0);
         }
 
-        /* Better mobile touch targets */
+        /* Progress bar at top */
+        #progress-bar {
+            height: 4px;
+            background: var(--accent);
+            width: 0%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            transition: width 0.25s ease;
+        }
+
+        /* Floating WhatsApp button */
+        .wa-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+            animation: float 6.5s ease-in-out infinite;
+        }
+
+        /* ────────────────────────────────────────
+           RESPONSIVE IMPROVEMENTS
+        ──────────────────────────────────────── */
         @media (max-width: 640px) {
             .hero-bg {
                 min-height: 90vh;
-                padding-top: 5rem;
+                padding-top: 5.5rem;
+                background-attachment: scroll;
             }
 
-            h1 {
-                font-size: 2.1rem;
+            h1 { font-size: 2.6rem !important; line-height: 1.15; }
+            h2 { font-size: 2.4rem !important; }
+            .text-7xl { font-size: 3.6rem !important; }
+            .text-5xl  { font-size: 2.8rem !important; }
+
+            button, a {
+                min-height: 54px;
+                font-size: 1.05rem !important;
+                padding: 1rem 1.5rem !important;
             }
 
-            h2 {
-                font-size: 2.4rem;
-            }
-
-            .text-6xl {
-                font-size: 3.2rem;
-            }
-
-            button,
-            a {
-                min-height: 52px;
-            }
+            .grid-cols-3 { grid-template-columns: 1fr; }
+            .md\:grid-cols-3 { grid-template-columns: 1fr; }
         }
-
 
         @media (max-width: 768px) {
-
-            .hero-bg {
-                background-attachment: scroll;
-                padding-top: 80px;
-            }
-
-            .hero-bg h1 {
-                font-size: 32px;
-                line-height: 1.2;
-            }
-
-            .hero-bg p {
-                font-size: 20px;
-            }
-
-            .hero-bg .flex {
-                flex-direction: column;
-            }
-
-            .hero-bg a {
-                width: 100%;
-            }
-
+            .hero-bg .grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-bg a { width: 100%; }
+            .flex-col-reverse { flex-direction: column-reverse; }
         }
 
-        body {
-            padding-bottom: 80px;
-        }
-
-        @media (max-width:640px) {
-
-            a,
-            button {
-                font-size: 16px;
-                padding: 14px 20px;
-            }
-
-        }
-
-        #google_translate_element {
-            background: white;
-            padding: 8px 14px;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-            font-weight: 600;
-        }
-
-        .goog-te-gadget {
-            font-family: Poppins !important;
-            font-size: 14px !important;
-            color: #000 !important;
-        }
-
-        .goog-te-combo {
-
-            padding: 6px 10px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            background: #f9fafb;
-            cursor: pointer;
-        }
-
-        .goog-logo-link {
-            display: none !important;
-        }
-
-        .goog-te-gadget span {
-            display: none;
-        }
-
-        @media (max-width:640px) {
-
-            h1 {
-                font-size: 28px !important;
-                line-height: 1.2;
-            }
-
-            h2 {
-                font-size: 28px !important;
-            }
-
-            .text-5xl {
-                font-size: 32px !important;
-            }
-
-            .text-6xl {
-                font-size: 36px !important;
-            }
-
-        }
+        body { padding-bottom: 90px; } /* space for mobile bottom nav */
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 
-<body class="text-gray-900 bg-gray-50 overflow-x-hidden">
+<body>
+
+    <!-- Progress Bar -->
+    <div id="progress-bar"></div>
 
     <!-- HEADER -->
     <header class="bg-gradient-to-r from-[#1e3a8a] to-[#172554] text-white sticky top-0 z-50 shadow-2xl">
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
-
-            <div class="flex items-center gap-3">
-
-                <div class="w-12 h-12 bg-yellow-400 rounded-2xl flex items-center justify-center shadow-lg">
-                    <i class="fa-solid fa-bolt text-[#1e3a8a] text-3xl"></i>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 bg-yellow-400 rounded-2xl flex items-center justify-center shadow-lg animate-pulse-glow">
+                    <i class="fa-solid fa-bolt text-[#1e3a8a] text-4xl"></i>
                 </div>
-
                 <div>
-                    <h1 class="text-3xl font-extrabold tracking-tight">SM <span
-                            class="text-yellow-400">TECHNICIAN</span></h1>
-                    <p class="text-sm -mt-1 text-blue-200 font-medium">Electrician & Plumbing</p>
+                    <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">SM <span class="text-yellow-400">TECHNICIAN</span></h1>
+                    <p class="text-sm md:text-base -mt-1 text-blue-200 font-medium">Electrician & Plumbing</p>
                 </div>
-
             </div>
 
             <div class="flex items-center gap-6">
-
-                <a href="tel:6202346561" class="flex items-center gap-2 hover:text-yellow-300">
-
-                    <i class="fa-solid fa-phone-volume text-xl"></i>
+                <a href="tel:6202346561" class="flex items-center gap-3 hover:text-yellow-300 transition text-lg">
+                    <i class="fa-solid fa-phone-volume text-xl animate-pulse"></i>
                     <span class="font-bold">62023 46561</span>
-
                 </a>
 
-
-                <button onclick="showQuoteModal()"
-                    class="bg-white text-[#1e3a8a] font-bold px-6 py-3 rounded-xl hover:bg-yellow-400">
-
+                <button onclick="showQuoteModal()" class="bg-white text-[#1e3a8a] font-bold px-7 py-3.5 rounded-xl hover:bg-yellow-400 transition-all hover:scale-105 shadow-md">
                     Get Quote
-
                 </button>
-
             </div>
-
         </div>
-
     </header>
 
-
-
     <!-- HERO -->
-    <section class="hero-bg min-h-screen flex items-center relative text-white">
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center text-center md:text-left">
+    <section class="hero-bg flex items-center relative text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center text-center md:text-left py-16 md:py-0">
             <div class="order-2 md:order-1 reveal active stagger-1">
-                <img src="logo.png"
-                    class="rounded-3xl shadow-2xl w-full max-w-md mx-auto border-8 border-white/30 animate-float">
-                <div
-                    class="absolute -bottom-4 -right-4 bg-white text-[#1e3a8a] px-3 py-2 rounded-xl shadow-lg flex items-center gap-2">
-
-                    <i class="fa-solid fa-check-circle text-green-500 text-xl"></i>
-
+                <img src="logo.png" class="rounded-3xl shadow-2xl w-full max-w-md mx-auto border-8 border-white/30 animate-float" alt="SM Technician Logo">
+                <div class="absolute -bottom-5 -right-5 bg-white text-[#1e3a8a] px-4 py-3 rounded-xl shadow-lg flex items-center gap-3 animate-pulse-glow">
+                    <i class="fa-solid fa-check-circle text-green-500 text-2xl"></i>
                     <div>
-                        <p class="font-bold text-sm">5+ Years</p>
-                        <p class="text-xs">Trusted</p>
+                        <p class="font-bold text-base">5+ Years</p>
+                        <p class="text-sm">Trusted</p>
                     </div>
-
                 </div>
             </div>
 
-            <div class="space-y-8 order-1 md:order-2">
-                <div
-                    class="inline-flex items-center bg-white/25 backdrop-blur-lg px-6 py-2 rounded-full text-sm font-semibold animate-pulse">
-                    <span class="bg-green-400 w-3 h-3 rounded-full mr-3 animate-ping"></span>
+            <div class="order-1 md:order-2 space-y-8">
+                <div class="inline-flex items-center bg-white/25 backdrop-blur-lg px-6 py-3 rounded-full text-base font-semibold animate-pulse stagger-1">
+                    <span class="bg-green-400 w-4 h-4 rounded-full mr-3 animate-ping"></span>
                     Now Serving Bhagalpur & Pirpanti
                 </div>
 
-                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight animate-slide-up stagger-1">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight animate-slide-up stagger-1 reveal active">
                     Your <span class="text-yellow-300">Trusted</span><br>Electrician & Plumber
                 </h1>
 
-                <p class="text-3xl md:text-4xl font-light text-blue-100 animate-slide-up stagger-2">
+                <p class="text-3xl md:text-4xl font-light text-blue-100 animate-typing inline-block reveal active stagger-2">
                     Fast • Reliable • Affordable
                 </p>
 
-                <div class="flex flex-col sm:flex-row gap-4 pt-4 w-full">
+                <div class="flex flex-col sm:flex-row gap-5 pt-6 w-full">
                     <a href="tel:6202346561"
-                        class="w-full sm:w-auto flex-1 bg-green-600 hover:bg-green-700 text-white font-bold text-xl py-6 px-8 rounded-3xl flex items-center justify-center gap-4 shadow-2xl transform hover:scale-105 transition-all animate-bounce-in stagger-3">
-                        <i class="fa-solid fa-phone-volume text-3xl"></i>
+                       class="w-full sm:w-auto flex-1 bg-green-600 hover:bg-green-700 text-white font-bold text-xl py-7 px-9 rounded-3xl flex items-center justify-center gap-5 shadow-2xl hover:scale-105 transition-all animate-bounce-in stagger-3">
+                        <i class="fa-solid fa-phone-volume text-4xl"></i>
                         <div>
                             <p class="text-base opacity-90">Call Now</p>
                             <p class="text-2xl">62023 46561</p>
@@ -402,9 +259,9 @@
                     </a>
 
                     <a href="https://wa.me/916202346561?text=Hello%20SM%20Technician%2C%20I%20need%20help..."
-                        target="_blank"
-                        class="flex-1 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-xl py-6 px-8 rounded-3xl flex items-center justify-center gap-4 shadow-2xl transform hover:scale-105 transition-all animate-bounce-in stagger-4">
-                        <i class="fa-brands fa-whatsapp text-4xl"></i>
+                       target="_blank"
+                       class="w-full sm:w-auto flex-1 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-xl py-7 px-9 rounded-3xl flex items-center justify-center gap-5 shadow-2xl hover:scale-105 transition-all animate-bounce-in stagger-4">
+                        <i class="fa-brands fa-whatsapp text-5xl"></i>
                         <div>
                             <p class="text-base opacity-90">WhatsApp</p>
                             <p class="text-2xl">Chat Now</p>
@@ -414,110 +271,96 @@
             </div>
         </div>
 
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hidden sm:flex flex-col items-center">
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center">
             <p class="text-sm tracking-widest mb-2 opacity-80">SCROLL DOWN</p>
             <i class="fa-solid fa-chevron-down text-4xl"></i>
         </div>
     </section>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/916202346561?text=Hello%20SM%20Technician%2C%20I%20need%20help..." target="_blank"
+       class="wa-float bg-[#25D366] text-white rounded-full w-16 h-16 flex items-center justify-center shadow-2xl hover:bg-[#128C7E] transition z-50">
+        <i class="fa-brands fa-whatsapp text-4xl"></i>
+    </a>
+
     <!-- SERVICES -->
-    <section class="py-20 bg-white" id="services">
+    <section class="py-20 md:py-24 bg-white" id="services">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <span class="bg-blue-100 text-[#1e3a8a] text-sm font-bold px-6 py-2 rounded-full inline-block mb-4">OUR
-                    EXPERTISE</span>
-                <h2 id="servicesTitle" class="text-5xl font-extrabold">Services We Provide</h2>
+            <div class="text-center mb-16 md:mb-20 reveal">
+                <span class="bg-blue-100 text-[#1e3a8a] text-sm font-bold px-7 py-3 rounded-full inline-block mb-5 animate-pulse">OUR EXPERTISE</span>
+                <h2 id="servicesTitle" class="text-4xl md:text-5xl font-extrabold reveal stagger-1">Services We Provide</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div
-                    class="service-card card-hover bg-white border border-gray-100 rounded-3xl p-8 text-center reveal stagger-1">
-                    <div
-                        class="service-icon w-20 h-20 mx-auto mb-6 bg-blue-100 rounded-2xl flex items-center justify-center text-6xl shadow-inner">
-                        ⚡</div>
-                    <h3 class="text-2xl font-bold mb-3">Electrician Services</h3>
-                    <p class="text-gray-600 mb-6">Fan repair, wiring, switchboard, inverter, LED fitting...</p>
-                    <a href="#" onclick="showQuoteModal()" class="text-blue-600 font-semibold hover:text-blue-800">
-                        Book Now →
-                    </a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                <div class="service-card card-hover bg-white border border-gray-100 rounded-3xl p-8 md:p-10 text-center reveal stagger-1">
+                    <div class="service-icon w-20 h-20 md:w-24 md:h-24 mx-auto mb-6 bg-blue-100 rounded-2xl flex items-center justify-center text-6xl md:text-7xl shadow-inner">⚡</div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3">Electrician Services</h3>
+                    <p class="text-gray-600 mb-6 text-base md:text-lg">Fan repair, wiring, switchboard, inverter, LED fitting...</p>
+                    <a href="#" onclick="showQuoteModal()" class="text-blue-600 font-semibold hover:text-blue-800 text-lg">Book Now →</a>
                 </div>
 
-                <div
-                    class="service-card card-hover bg-white border border-gray-100 rounded-3xl p-8 text-center reveal stagger-2">
-                    <div
-                        class="service-icon w-20 h-20 mx-auto mb-6 bg-amber-100 rounded-2xl flex items-center justify-center text-6xl shadow-inner">
-                        🏠</div>
-                    <h3 class="text-2xl font-bold mb-3">House Wiring</h3>
-                    <p class="text-gray-600 mb-6">New house, renovation, industrial, concealed wiring...</p>
-                    <a href="#" onclick="showQuoteModal()" class="text-blue-600 font-semibold hover:text-blue-800">
-                        Book Now →
-                    </a>
+                <div class="service-card card-hover bg-white border border-gray-100 rounded-3xl p-8 md:p-10 text-center reveal stagger-2">
+                    <div class="service-icon w-20 h-20 md:w-24 md:h-24 mx-auto mb-6 bg-amber-100 rounded-2xl flex items-center justify-center text-6xl md:text-7xl shadow-inner">🏠</div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3">House Wiring</h3>
+                    <p class="text-gray-600 mb-6 text-base md:text-lg">New house, renovation, industrial, concealed wiring...</p>
+                    <a href="#" onclick="showQuoteModal()" class="text-blue-600 font-semibold hover:text-blue-800 text-lg">Book Now →</a>
                 </div>
 
-                <div
-                    class="service-card card-hover bg-white border border-gray-100 rounded-3xl p-8 text-center reveal stagger-3">
-                    <div
-                        class="service-icon w-20 h-20 mx-auto mb-6 bg-teal-100 rounded-2xl flex items-center justify-center text-6xl shadow-inner">
-                        🔧</div>
-                    <h3 class="text-2xl font-bold mb-3">Plumbing Services</h3>
-                    <p class="text-gray-600 mb-6">Leakage, pipe fitting, bathroom/kitchen setup, drainage...</p>
-                    <a href="#" onclick="showQuoteModal()" class="text-blue-600 font-semibold hover:text-blue-800">
-                        Book Now →
-                    </a>
+                <div class="service-card card-hover bg-white border border-gray-100 rounded-3xl p-8 md:p-10 text-center reveal stagger-3">
+                    <div class="service-icon w-20 h-20 md:w-24 md:h-24 mx-auto mb-6 bg-teal-100 rounded-2xl flex items-center justify-center text-6xl md:text-7xl shadow-inner">🔧</div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3">Plumbing Services</h3>
+                    <p class="text-gray-600 mb-6 text-base md:text-lg">Leakage, pipe fitting, bathroom/kitchen setup, drainage...</p>
+                    <a href="#" onclick="showQuoteModal()" class="text-blue-600 font-semibold hover:text-blue-800 text-lg">Book Now →</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- WHY CHOOSE US -->
-    <section class="py-20 bg-gradient-to-br from-blue-50 via-white to-blue-50">
+    <section class="py-20 md:py-24 bg-gradient-to-br from-blue-50 via-white to-blue-50">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-extrabold text-center mb-16 reveal">Why Choose SM Technician?</h2>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-16 md:mb-20 reveal stagger-1">Why Choose SM Technician?</h2>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div
-                    class="bg-white rounded-3xl p-8 text-center shadow-lg reveal stagger-1 hover:scale-105 transition-transform">
-                    <div class="text-7xl mb-4">🕒</div>
-                    <h4 class="text-xl font-bold mb-2">24×7 Emergency</h4>
-                    <p class="text-gray-600">We never sleep</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="bg-white rounded-3xl p-8 md:p-10 text-center shadow-lg reveal stagger-1 hover:scale-105 transition-transform">
+                    <div class="text-7xl md:text-8xl mb-4 animate-bounce-in">🕒</div>
+                    <h4 class="text-xl md:text-2xl font-bold mb-2">24×7 Emergency</h4>
+                    <p class="text-gray-600 text-base md:text-lg">We never sleep</p>
                 </div>
-                <div
-                    class="bg-white rounded-3xl p-8 text-center shadow-lg reveal stagger-2 hover:scale-105 transition-transform">
-                    <div class="text-7xl mb-4">👷‍♂️</div>
-                    <h4 class="text-xl font-bold mb-2">5+ Years Exp.</h4>
-                    <p class="text-gray-600">Certified experts</p>
+                <div class="bg-white rounded-3xl p-8 md:p-10 text-center shadow-lg reveal stagger-2 hover:scale-105 transition-transform">
+                    <div class="text-7xl md:text-8xl mb-4 animate-bounce-in stagger-2">👷‍♂️</div>
+                    <h4 class="text-xl md:text-2xl font-bold mb-2 counter" data-target="5">5+</h4>
+                    <p class="text-gray-600 text-base md:text-lg">Years Experience</p>
                 </div>
-                <div
-                    class="bg-white rounded-3xl p-8 text-center shadow-lg reveal stagger-3 hover:scale-105 transition-transform">
-                    <div class="text-7xl mb-4">₹</div>
-                    <h4 class="text-xl font-bold mb-2">Transparent Pricing</h4>
-                    <p class="text-gray-600">No surprise charges</p>
+                <div class="bg-white rounded-3xl p-8 md:p-10 text-center shadow-lg reveal stagger-3 hover:scale-105 transition-transform">
+                    <div class="text-7xl md:text-8xl mb-4 animate-bounce-in stagger-3">₹</div>
+                    <h4 class="text-xl md:text-2xl font-bold mb-2">Transparent Pricing</h4>
+                    <p class="text-gray-600 text-base md:text-lg">No surprise charges</p>
                 </div>
-                <div
-                    class="bg-white rounded-3xl p-8 text-center shadow-lg reveal stagger-4 hover:scale-105 transition-transform">
-                    <div class="text-7xl mb-4">⚡</div>
-                    <h4 class="text-xl font-bold mb-2">Fast Response</h4>
-                    <p class="text-gray-600">Usually same day</p>
+                <div class="bg-white rounded-3xl p-8 md:p-10 text-center shadow-lg reveal stagger-4 hover:scale-105 transition-transform">
+                    <div class="text-7xl md:text-8xl mb-4 animate-bounce-in stagger-4">⚡</div>
+                    <h4 class="text-xl md:text-2xl font-bold mb-2">Fast Response</h4>
+                    <p class="text-gray-600 text-base md:text-lg">Usually same day</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FINAL CTA -->
-    <section class="py-20 bg-gradient-to-r from-[#1e3a8a] to-[#172554] text-white">
+    <section class="py-20 md:py-24 bg-gradient-to-r from-[#1e3a8a] to-[#172554] text-white">
         <div class="max-w-5xl mx-auto px-6 text-center">
-            <h2 class="text-5xl md:text-6xl font-extrabold mb-6 animate-slide-up">Problem? Call Us Now!</h2>
-            <p class="text-2xl mb-10 opacity-90 animate-slide-up stagger-1">Bhagalpur & Pirpanti • Instant Support</p>
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-6 md:mb-8 animate-slide-up reveal">Problem? Call Us Now!</h2>
+            <p class="text-xl md:text-2xl mb-8 md:mb-12 opacity-90 animate-slide-up stagger-1 reveal">Bhagalpur & Pirpanti • Instant Support</p>
 
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <div class="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center">
                 <a href="tel:6202346561"
-                    class="bg-green-600 hover:bg-green-700 text-white font-extrabold text-2xl py-7 px-12 rounded-3xl flex items-center justify-center gap-5 shadow-2xl transform hover:scale-105 transition-all animate-pulse-scale">
-                    <i class="fa-solid fa-phone-volume text-4xl"></i>
+                   class="bg-green-600 hover:bg-green-700 text-white font-extrabold text-xl md:text-2xl py-6 md:py-8 px-10 md:px-14 rounded-3xl flex items-center justify-center gap-5 shadow-2xl hover:scale-105 transition-all animate-pulse-scale animate-shine">
+                    <i class="fa-solid fa-phone-volume text-4xl md:text-5xl"></i>
                     CALL : 62023 46561
                 </a>
 
                 <a href="https://wa.me/916202346561?text=Hello%20I%20need%20urgent%20help..." target="_blank"
-                    class="bg-[#25D366] hover:bg-[#128C7E] text-white font-extrabold text-2xl py-7 px-12 rounded-3xl flex items-center justify-center gap-5 shadow-2xl transform hover:scale-105 transition-all">
+                   class="bg-[#25D366] hover:bg-[#128C7E] text-white font-extrabold text-xl md:text-2xl py-6 md:py-8 px-10 md:px-14 rounded-3xl flex items-center justify-center gap-5 shadow-2xl hover:scale-105 transition-all">
                     <i class="fa-brands fa-whatsapp text-5xl"></i>
                     WHATSAPP NOW
                 </a>
@@ -525,84 +368,58 @@
         </div>
     </section>
 
-
-
-
+    <!-- ONLINE BOOKING -->
     <section class="py-20 bg-gray-100">
-
         <div class="max-w-5xl mx-auto px-6">
-
-            <h2 id="bookingTitle" class="text-4xl font-bold text-center mb-10">
+            <h2 id="bookingTitle" class="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-12 reveal">
                 Online Booking
             </h2>
 
-            <div class="grid md:grid-cols-3 gap-6">
-
-                <button onclick="showQuoteModal()"
-                    class="bg-blue-600 text-white p-8 rounded-3xl text-xl font-bold hover:bg-blue-700">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <button onclick="showQuoteModal()" class="bg-blue-600 text-white p-8 md:p-10 rounded-3xl text-xl md:text-2xl font-bold hover:bg-blue-700 transition hover:scale-105 shadow-md reveal stagger-1">
                     ⚡ Electrician
                 </button>
 
-                <button onclick="showQuoteModal()"
-                    class="bg-green-600 text-white p-8 rounded-3xl text-xl font-bold hover:bg-green-700">
+                <button onclick="showQuoteModal()" class="bg-green-600 text-white p-8 md:p-10 rounded-3xl text-xl md:text-2xl font-bold hover:bg-green-700 transition hover:scale-105 shadow-md reveal stagger-2">
                     🏠 House Wiring
                 </button>
 
-                <button onclick="showQuoteModal()"
-                    class="bg-yellow-500 text-white p-8 rounded-3xl text-xl font-bold hover:bg-yellow-600">
+                <button onclick="showQuoteModal()" class="bg-yellow-500 text-white p-8 md:p-10 rounded-3xl text-xl md:text-2xl font-bold hover:bg-yellow-600 transition hover:scale-105 shadow-md reveal stagger-3">
                     🔧 Plumbing
                 </button>
-
             </div>
-
         </div>
-
     </section>
 
-
-
+    <!-- SERVICE AREA MAP -->
     <section class="py-20">
-
         <div class="max-w-6xl mx-auto px-6">
-
-            <h2 id="areaTitle" class="text-4xl font-bold text-center mb-10">
-                Our Service Area
-                Barahat Ishipur (20km Radius)
+            <h2 id="areaTitle" class="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-12 reveal">
+                Our Service Area<br>Barahat Ishipur (20km Radius)
             </h2>
 
-            <div class="rounded-2xl overflow-hidden shadow-xl">
-
-                <iframe src="https://www.google.com/maps?q=Ishipur%20Barahat%20Bihar&output=embed" width="100%"
-                    height="350" style="border:0;" loading="lazy">
-                </iframe>
-
+            <div class="rounded-2xl overflow-hidden shadow-2xl reveal stagger-1">
+                <iframe src="https://www.google.com/maps?q=Ishipur%20Barahat%20Bihar&output=embed" width="100%" height="400" style="border:0;" loading="lazy" allowfullscreen></iframe>
             </div>
-
         </div>
-
     </section>
 
-
-
-
-
-
     <!-- FOOTER -->
-    <footer class="bg-gray-950 text-gray-300 py-16">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+    <footer class="bg-gray-950 text-gray-300 py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10 md:gap-12">
             <div>
                 <div class="flex items-center gap-4 mb-6">
-                    <div class="w-14 h-14 bg-yellow-400 rounded-2xl flex items-center justify-center">
+                    <div class="w-14 h-14 bg-yellow-400 rounded-2xl flex items-center justify-center shadow-lg">
                         <i class="fa-solid fa-bolt text-[#1e3a8a] text-3xl"></i>
                     </div>
-                    <h3 class="text-4xl font-black text-white">SM TECHNICIAN</h3>
+                    <h3 class="text-3xl md:text-4xl font-black text-white">SM TECHNICIAN</h3>
                 </div>
-                <p class="text-gray-400">Trusted local service in Bhagalpur & Pirpanti since 5+ years.</p>
+                <p class="text-gray-400 text-base md:text-lg">Trusted local service in Bhagalpur & Pirpanti since 5+ years.</p>
             </div>
 
             <div>
-                <h4 class="text-yellow-400 font-bold text-xl mb-6">QUICK LINKS</h4>
-                <ul class="space-y-4">
+                <h4 class="text-yellow-400 font-bold text-lg md:text-xl mb-6">QUICK LINKS</h4>
+                <ul class="space-y-4 text-base md:text-lg">
                     <li><a href="#services" class="hover:text-white transition">Services</a></li>
                     <li><a href="#" onclick="showQuoteModal()" class="hover:text-white transition">Get Quote</a></li>
                     <li><a href="tel:6202346561" class="hover:text-white transition">Call Us</a></li>
@@ -610,113 +427,80 @@
             </div>
 
             <div>
-                <h4 class="text-yellow-400 font-bold text-xl mb-6">CONTACT</h4>
-                <p class="flex items-center gap-3 mb-4">
+                <h4 class="text-yellow-400 font-bold text-lg md:text-xl mb-6">CONTACT</h4>
+                <p class="flex items-center gap-3 mb-4 text-base md:text-lg">
                     <i class="fa-solid fa-phone text-yellow-400"></i>
                     <a href="tel:6202346561" class="hover:text-white">62023 46561</a>
                 </p>
-                <p class="flex items-center gap-3">
+                <p class="flex items-center gap-3 text-base md:text-lg">
                     <i class="fa-brands fa-whatsapp text-yellow-400 text-xl"></i>
                     <a href="https://wa.me/916202346561" target="_blank" class="hover:text-white">WhatsApp Chat</a>
                 </p>
             </div>
         </div>
 
-        <div class="text-center text-gray-600 text-sm mt-16 pt-8 border-t border-gray-800">
+        <div class="text-center text-gray-600 text-sm md:text-base mt-12 md:mt-16 pt-8 border-t border-gray-800">
             © 2026 SM TECHNICIAN – All Rights Reserved
         </div>
     </footer>
 
     <!-- QUOTE MODAL -->
-    <div id="quoteModal" class="fixed inset-0 bg-black/70 hidden flex items-center justify-center z-[9999] p-4">
-        <div class="modal bg-white rounded-3xl w-full max-w-lg mx-auto max-h-[92vh] overflow-y-auto shadow-2xl">
-            <div class="bg-[#1e3a8a] text-white px-8 py-6 flex justify-between items-center">
-                <h3 class="text-2xl font-bold">Get Your Free Quote</h3>
-                <button onclick="hideQuoteModal()" class="text-4xl leading-none hover:text-yellow-300">&times;</button>
+    <div id="quoteModal" class="fixed inset-0 bg-black/70 hidden flex items-center justify-center z-[9999] p-4 md:p-6">
+        <div class="modal bg-white rounded-3xl w-full max-w-lg md:max-w-xl mx-auto max-h-[90vh] overflow-y-auto shadow-2xl animate-bounce-in">
+            <div class="bg-[#1e3a8a] text-white px-6 md:px-8 py-5 md:py-6 flex justify-between items-center rounded-t-3xl">
+                <h3 class="text-xl md:text-2xl font-bold">Get Your Free Quote</h3>
+                <button onclick="hideQuoteModal()" class="text-4xl md:text-5xl leading-none hover:text-yellow-300">×</button>
             </div>
 
-            <form onsubmit="submitQuote(event)" class="p-8 space-y-6">
-
+            <form onsubmit="submitQuote(event)" class="p-6 md:p-8 space-y-5 md:space-y-6">
                 <div>
-
-                    <label>Name</label>
-
-                    <input type="text" id="name" required class="w-full border rounded-xl px-4 py-3">
-
+                    <label class="block mb-2 font-medium">Name</label>
+                    <input type="text" id="name" required class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]">
                 </div>
-
                 <div>
-
-                    <label>Phone</label>
-
-                    <input type="tel" id="phone" required class="w-full border rounded-xl px-4 py-3">
-
+                    <label class="block mb-2 font-medium">Phone</label>
+                    <input type="tel" id="phone" required class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]">
                 </div>
-
                 <div>
-
-                    <label>Address</label>
-
-                    <input type="text" id="address" class="w-full border rounded-xl px-4 py-3">
-
+                    <label class="block mb-2 font-medium">Address</label>
+                    <input type="text" id="address" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]">
                 </div>
-
                 <div>
-
-                    <label>Landmark</label>
-
-                    <input type="text" id="landmark" class="w-full border rounded-xl px-4 py-3">
-
+                    <label class="block mb-2 font-medium">Landmark</label>
+                    <input type="text" id="landmark" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]">
                 </div>
-
                 <div>
-
-                    <label>Service</label>
-
-                    <select id="service" class="w-full border rounded-xl px-4 py-3">
-
+                    <label class="block mb-2 font-medium">Service</label>
+                    <select id="service" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]">
                         <option>Electrician</option>
                         <option>House Wiring</option>
                         <option>Plumbing</option>
                         <option>Emergency</option>
-
                     </select>
-
                 </div>
-
                 <div>
-
-                    <label>Describe Problem</label>
-
-                    <textarea id="message" class="w-full border rounded-xl px-4 py-3"></textarea>
-
+                    <label class="block mb-2 font-medium">Describe Problem</label>
+                    <textarea id="message" rows="4" class="w-full border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]"></textarea>
                 </div>
-
-                <button type="submit" class="w-full bg-blue-900 text-white font-bold py-4 rounded-xl">
-
+                <button type="submit" class="w-full bg-blue-900 text-white font-bold py-4 rounded-xl hover:bg-blue-800 transition text-lg md:text-xl">
                     SEND → We will call in 5–15 min
-
                 </button>
-
             </form>
         </div>
     </div>
 
-    <!-- Mobile Bottom Nav -->
+    <!-- Mobile Bottom Navigation -->
     <div class="fixed bottom-0 left-0 right-0 bg-white border-t md:hidden z-50 shadow-2xl">
-        <div class="flex">
-            <a href="tel:6202346561"
-                class="flex-1 py-4 text-center border-r flex flex-col items-center text-green-600 active:bg-gray-100">
+        <div class="flex divide-x">
+            <a href="tel:6202346561" class="flex-1 py-4 text-center flex flex-col items-center text-green-600 active:bg-gray-100">
                 <i class="fa-solid fa-phone-volume text-3xl"></i>
                 <span class="text-xs mt-1 font-medium">CALL</span>
             </a>
-            <a href="https://wa.me/916202346561" target="_blank"
-                class="flex-1 py-4 text-center border-r flex flex-col items-center text-green-600 active:bg-gray-100">
+            <a href="https://wa.me/916202346561" target="_blank" class="flex-1 py-4 text-center flex flex-col items-center text-green-600 active:bg-gray-100">
                 <i class="fa-brands fa-whatsapp text-4xl"></i>
                 <span class="text-xs mt-1 font-medium">WHATSAPP</span>
             </a>
-            <button onclick="showQuoteModal()"
-                class="flex-1 py-4 text-center flex flex-col items-center text-blue-700 active:bg-gray-100">
+            <button onclick="showQuoteModal()" class="flex-1 py-4 text-center flex flex-col items-center text-blue-700 active:bg-gray-100">
                 <i class="fa-solid fa-file-invoice-dollar text-3xl"></i>
                 <span class="text-xs mt-1 font-medium">QUOTE</span>
             </button>
@@ -724,76 +508,52 @@
     </div>
 
     <script>
-        // Modal
-        function showQuoteModal() { document.getElementById('quoteModal').classList.remove('hidden'); document.getElementById('quoteModal').classList.add('flex'); }
-        function hideQuoteModal() { document.getElementById('quoteModal').classList.add('hidden'); document.getElementById('quoteModal').classList.remove('flex'); }
-
-        // Quote form → WhatsApp + console log (remove emailjs if not configured)
-        function submitQuote(e) {
-
-e.preventDefault();
-
-const name = document.getElementById('name').value;
-const phone = document.getElementById('phone').value;
-const address = document.getElementById('address').value;
-const landmark = document.getElementById('landmark').value;
-const service = document.getElementById('service').value;
-const msg = document.getElementById('message').value;
-
-const data = {
-name:name,
-phone:phone,
-address:address,
-landmark:landmark,
-service:service,
-message:msg,
-location:customerLocation
-};
-
-fetch("https://script.google.com/macros/s/AKfycbyZS0slJVDBH8ymLyZolQ8Op7PFl-4ZswUd5fVS1tq9H0AZZ_VPQypNXfnSjZqRwGdFCA/exec",{
-method:"POST",
-body:JSON.stringify(data)
-});
-
-const text =
-`NEW SERVICE BOOKING
-
-Name: ${name}
-Phone: ${phone}
-Address: ${address}
-Landmark: ${landmark}
-Service: ${service}
-
-Problem:
-${msg}
-
-Location:
-${customerLocation}`;
-
-const whatsapp =
-"https://wa.me/916202346561?text="+encodeURIComponent(text);
-
-window.open(whatsapp,"_blank");
-
-alert("Booking Sent Successfully!");
-
-document.querySelector("form").reset();
-
-hideQuoteModal();
-
-}
-
-        // Review form → WhatsApp
-        function sendReview(e) {
-            e.preventDefault();
-            const name = document.getElementById("reviewName").value;
-            const msg = document.getElementById("reviewMessage").value;
-            const text = `New Review\nName: ${name}\nReview: ${msg}`;
-            const url = "https://wa.me/916202346561?text=" + encodeURIComponent(text);
-            window.open(url, '_blank');
+        // Modal Controls
+        function showQuoteModal() {
+            document.getElementById('quoteModal').classList.remove('hidden');
+            document.getElementById('quoteModal').classList.add('flex');
         }
 
-        // Scroll reveal
+        function hideQuoteModal() {
+            document.getElementById('quoteModal').classList.add('hidden');
+            document.getElementById('quoteModal').classList.remove('flex');
+        }
+
+        // Form Submit - WhatsApp + Google Sheet
+        function submitQuote(e) {
+            e.preventDefault();
+
+            const name     = document.getElementById('name').value.trim();
+            const phone    = document.getElementById('phone').value.trim();
+            const address  = document.getElementById('address').value.trim();
+            const landmark = document.getElementById('landmark').value.trim();
+            const service  = document.getElementById('service').value;
+            const msg      = document.getElementById('message').value.trim();
+
+            const text = `NEW SERVICE BOOKING\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\nLandmark: ${landmark}\nService: ${service}\n\nProblem:\n${msg}\n\nLocation:\n${customerLocation || 'Not shared'}`;
+
+            window.open("https://wa.me/916202346561?text=" + encodeURIComponent(text), "_blank");
+
+            // Send to Google Sheet (your original endpoint)
+            fetch("https://script.google.com/macros/s/AKfycbyZS0slJVDBH8ymLyZolQ8Op7PFl-4ZswUd5fVS1tq9H0AZZ_VPQypNXfnSjZqRwGdFCA/exec", {
+                method: "POST",
+                body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    address: address,
+                    landmark: landmark,
+                    service: service,
+                    message: msg,
+                    location: customerLocation || 'Not shared'
+                })
+            }).catch(err => console.error("Sheet save failed:", err));
+
+            alert("Booking Sent Successfully! We will contact you soon.");
+            e.target.reset();
+            hideQuoteModal();
+        }
+
+        // Scroll Reveal
         function handleReveal() {
             document.querySelectorAll('.reveal').forEach(el => {
                 const rect = el.getBoundingClientRect();
@@ -806,79 +566,70 @@ hideQuoteModal();
         window.addEventListener('scroll', handleReveal);
         window.addEventListener('load', handleReveal);
 
-        // Escape key → close modal
+        // Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + "%";
+        });
+
+        // Location
+        let customerLocation = "Location not shared";
+        function getCustomerLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(pos => {
+                    customerLocation = `https://maps.google.com/?q=${pos.coords.latitude},${pos.coords.longitude}`;
+                }, () => {
+                    customerLocation = "Location permission denied";
+                });
+            }
+        }
+
+        // Counter Animation for "5+ Years"
+        document.querySelectorAll('.counter').forEach(counter => {
+            const updateCount = () => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                let count = parseInt(counter.innerText) || 0;
+                const increment = target / 50;
+                if (count < target) {
+                    count += increment;
+                    counter.innerText = Math.ceil(count) + (target === 5 ? '+' : '');
+                    setTimeout(updateCount, 30);
+                } else {
+                    counter.innerText = target + '+';
+                }
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) updateCount();
+            }, { threshold: 0.5 });
+
+            observer.observe(counter);
+        });
+
+        // On Load
+        window.onload = function () {
+            getCustomerLocation();
+            handleReveal();
+        };
+
+        // Escape to close modal
         document.addEventListener('keydown', e => {
             if (e.key === "Escape") hideQuoteModal();
         });
 
-
-
-        let customerLocation = "Location not shared";
-
-        function getCustomerLocation() {
-
-            if (navigator.geolocation) {
-
-                navigator.geolocation.getCurrentPosition(function (position) {
-
-                    const lat = position.coords.latitude;
-                    const lon = position.coords.longitude;
-
-                    customerLocation =
-                        "https://maps.google.com/?q=" + lat + "," + lon;
-
-                });
-
-            }
-
-        }
-
-        window.onload = function () {
-            getCustomerLocation();
-            handleReveal();
-        }
-
-
+        // Simple language switch (optional - can expand later)
         function changeLang(lang) {
-
             if (lang === "hi") {
-
                 document.title = "SM Technician - बिजली और प्लंबिंग सेवा";
-
-                document.getElementById("servicesTitle").innerText =
-                    "हमारी सेवाएं";
-
-                document.getElementById("bookingTitle").innerText =
-                    "ऑनलाइन बुकिंग";
-
-                document.getElementById("areaTitle").innerText =
-                    "हमारा सेवा क्षेत्र (बराहट ईशीपुर 20km)";
-
+                document.getElementById("servicesTitle").innerText = "हमारी सेवाएं";
+                document.getElementById("bookingTitle").innerText = "ऑनलाइन बुकिंग";
+                document.getElementById("areaTitle").innerText = "हमारा सेवा क्षेत्र (बराहट ईशीपुर 20km)";
             }
-
-            if (lang === "en") {
-
-                document.title = "SM Technician - Electrician & Plumbing Service";
-
-                document.getElementById("servicesTitle").innerText =
-                    "Services We Provide";
-
-                document.getElementById("bookingTitle").innerText =
-                    "Online Booking";
-
-                document.getElementById("areaTitle").innerText =
-                    "Our Service Area Barahat Ishipur (20km Radius)";
-
-            }
-
+            // English version already exists in original
         }
     </script>
 
- 
-
-   
-
-
 </body>
-
 </html>
