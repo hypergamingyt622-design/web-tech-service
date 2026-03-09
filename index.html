@@ -732,27 +732,37 @@
         // Quote form → WhatsApp + console log (remove emailjs if not configured)
         function submitQuote(e) {
 
-            e.preventDefault();
+e.preventDefault();
 
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const address = document.getElementById('address').value;
-            const landmark = document.getElementById('landmark').value;
-            const service = document.getElementById('service').value;
-            const msg = document.getElementById('message').value;
+const name = document.getElementById('name').value;
+const phone = document.getElementById('phone').value;
+const address = document.getElementById('address').value;
+const landmark = document.getElementById('landmark').value;
+const service = document.getElementById('service').value;
+const msg = document.getElementById('message').value;
 
-            const text =
+const data = {
+name:name,
+phone:phone,
+address:address,
+landmark:landmark,
+service:service,
+message:msg,
+location:customerLocation
+};
 
-                `NEW SERVICE BOOKING
+fetch("https://script.google.com/macros/s/AKfycbzPxlkBe6qJnizgabiMvAixre2cZwOL94-qct2ZYQcHSc3z_4Rnrq9dLseiAtnertkU4A/exec",{
+method:"POST",
+body:JSON.stringify(data)
+});
+
+const text =
+`NEW SERVICE BOOKING
 
 Name: ${name}
-
 Phone: ${phone}
-
 Address: ${address}
-
 Landmark: ${landmark}
-
 Service: ${service}
 
 Problem:
@@ -761,32 +771,18 @@ ${msg}
 Location:
 ${customerLocation}`;
 
-            const url =
-                "https://wa.me/916202346561?text=" +
-                encodeURIComponent(text);
+const whatsapp =
+"https://wa.me/916202346561?text="+encodeURIComponent(text);
 
-            fetch("https://script.google.com/macros/s/AKfycbw3iriGNY_O7sxyx7jiivaEL2EOYNckh1WA4WzoV4YFopXS6E60dUCpU-dwdLqludLt/exec", {
+window.open(whatsapp,"_blank");
 
-                method: "POST",
+alert("Booking Sent Successfully!");
 
-                body: JSON.stringify({
+document.querySelector("form").reset();
 
-                    name: name,
-                    phone: phone,
-                    address: address,
-                    landmark: landmark,
-                    service: service,
-                    message: msg,
-                    location: customerLocation
+hideQuoteModal();
 
-                })
-
-            });
-
-            // ✅ WhatsApp open
-    window.open(url, "_blank");
-
-        }
+}
 
         // Review form → WhatsApp
         function sendReview(e) {
